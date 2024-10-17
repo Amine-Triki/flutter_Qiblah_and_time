@@ -1,0 +1,16 @@
+{
+    "title": "Boussole et heure",
+    "s": "Compass and Time",
+    "lungEn": "Anglais",
+    "lungFr": "français",
+    "lungAr": "arabe",
+    "compass": "boussole",
+    "detQ": "Déterminer la Qibla",
+    "timeM": "L'heure à la Mecque",
+    "gps": "gps",
+    "Hijri": "Hijri",
+    "Gregorian": "Grégorien",
+    "home": "Accueil",
+    "conTime": "conversion de temps",
+    "gregorianHijri": "Grégorien <--> Hijri"
+}

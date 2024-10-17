@@ -1,0 +1,15 @@
+{
+    "title": "Compass and Time",
+    "lungEn": "english",
+    "lungFr": "franche",
+    "lungAr": "arabic",
+    "compass": "compass",
+    "detQ": "Determine the Qibla",
+    "timeM": "Time in Mecca",
+    "gps": "gps",
+    "Hijri": "Hijri",
+    "Gregorian": "Gregorian",
+    "home": "home",
+    "conTime": "time conversion",
+    "gregorianHijri": "Gregorian <--> Hijri"
+}
