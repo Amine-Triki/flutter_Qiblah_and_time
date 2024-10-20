@@ -4,6 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 import 'package:intl/intl.dart';
 
+import 'screens/home scrren/time.dart';
+import 'dart:async';
+
 void main() {
   runApp(const MyApp());
 }
@@ -70,6 +73,43 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  late Timer _timer;
+  String _currentTime = '';
+  String _meccaTime = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _updateTime(); // تحديث الوقت أول مرة
+    startTimer(); // بدء المؤقت
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel(); // إلغاء المؤقت عند التخلص من الواجهة
+    super.dispose();
+  }
+
+  void startTimer() {
+    DateTime now = DateTime.now();
+    int secondsUntilNextMinute = 60 - now.second;
+
+    Timer(Duration(seconds: secondsUntilNextMinute), () {
+      _updateTime();
+
+      _timer = Timer.periodic(const Duration(minutes: 1), (Timer t) {
+        _updateTime();
+      });
+    });
+  }
+
+  void _updateTime() {
+    setState(() {
+      _currentTime = TimeInfo.getCurrentTime();
+      _meccaTime = TimeInfo.getMeccaTime();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,32 +145,78 @@ class _HomeViewState extends State<HomeView> {
       ),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  S.of(context).title,
-                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 30),
+                  S.of(context).timeNow,
+                  style: TextStyle(
+                      fontFamily: 'ElMessir',
+                      fontSize: 18,
+                      color: Theme.of(context).colorScheme.primary),
                 ),
-                const Text(' 12:54 pm'),
+                Text(
+                  '   $_currentTime',
+                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                ),
               ],
             ),
+            Wrap(
+              runAlignment: WrapAlignment.center,
+              children: [
+                Text(
+                  '${S.of(context).Gregorian} ${TimeInfo.getNowGregorianDate()}',
+                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  '${S.of(context).Hijri} ${TimeInfo.getNowHijriDate()}',
+                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('${S.of(context).Gregorian} 10/16/2024'),
-                const SizedBox(width: 10),
-                Text('${S.of(context).Hijri} Hijri 04-12-1446'),
+                Text(
+                  S.of(context).timeM,
+                  style:  TextStyle(fontFamily: 'ElMessir', fontSize: 18,color: Theme.of(context).colorScheme.secondary),
+                ),
+                Text(
+                  '   $_meccaTime',
+                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                ),
               ],
             ),
+            Wrap(
+              runAlignment: WrapAlignment.center,
+              children: [
+                Text(
+                  '${S.of(context).Gregorian} ${TimeInfo.getMeccaGregorianDate()}',
+                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  '${S.of(context).Hijri} ${TimeInfo.getMeccaHijriDate()}',
+                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
             Container(
               padding: EdgeInsets.only(
-                left: isArabic() ? 0 : 10,
-                right: isArabic() ? 10 : 0,
+                left: isArabic() ? 0 : 1,
+                right: isArabic() ? 1 : 0,
               ),
-              child: Text(S.of(context).detQ),
+              child: Text(
+                S.of(context).detQ,
+                style: const TextStyle(
+                    fontFamily: 'ElMessir',
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),

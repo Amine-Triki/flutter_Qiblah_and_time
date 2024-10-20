@@ -110,6 +110,16 @@ class S {
     );
   }
 
+  /// `Current Time`
+  String get timeNow {
+    return Intl.message(
+      'Current Time',
+      name: 'timeNow',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Time in Mecca`
   String get timeM {
     return Intl.message(

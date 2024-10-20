@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungEn": MessageLookupByLibrary.simpleMessage("english"),
         "lungFr": MessageLookupByLibrary.simpleMessage("franche"),
         "timeM": MessageLookupByLibrary.simpleMessage("Time in Mecca"),
+        "timeNow": MessageLookupByLibrary.simpleMessage("Current Time"),
         "title": MessageLookupByLibrary.simpleMessage("Compass and Time")
       };
 }
