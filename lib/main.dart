@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 import 'package:intl/intl.dart';
 
+import 'screens/home scrren/compass.dart';
 import 'screens/home scrren/time.dart';
 import 'dart:async';
 
@@ -217,6 +218,12 @@ class _HomeViewState extends State<HomeView> {
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
+            ),
+            SizedBox(height:20),
+            Container(
+              
+child: QiblahScreen(),
+
             ),
           ],
         ),
