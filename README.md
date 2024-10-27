@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# compass_and_gps_and_time
+#  Qiblah and time
 
 A new Flutter project.
 
@@ -16,8 +16,8 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 =======
-# flutter_compass_and_gps_and_time
-flutter ui An application to determine the direction of the Qiblah using a compass or GPS and to know the time
+# flutter_Qiblah_and_time
+flutter ui An application to determine the direction of the Qiblah using a compass and to know the time
 I use for multi language :
   flutter_localizations:
     sdk: flutter  
