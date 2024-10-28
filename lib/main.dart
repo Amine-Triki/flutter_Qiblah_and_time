@@ -145,87 +145,89 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  S.of(context).timeNow,
-                  style: TextStyle(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    S.of(context).timeNow,
+                    style: TextStyle(
+                        fontFamily: 'ElMessir',
+                        fontSize: 18,
+                        color: Theme.of(context).colorScheme.primary),
+                  ),
+                  Text(
+                    '   $_currentTime',
+                    style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                  ),
+                ],
+              ),
+              Wrap(
+                runAlignment: WrapAlignment.center,
+                children: [
+                  Text(
+                    '${S.of(context).Gregorian} ${TimeInfo.getNowGregorianDate()}',
+                    style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    '${S.of(context).Hijri} ${TimeInfo.getNowHijriDate()}',
+                    style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    S.of(context).timeM,
+                    style:  TextStyle(fontFamily: 'ElMessir', fontSize: 18,color: Theme.of(context).colorScheme.secondary),
+                  ),
+                  Text(
+                    '   $_meccaTime',
+                    style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                  ),
+                ],
+              ),
+              Wrap(
+                runAlignment: WrapAlignment.center,
+                children: [
+                  Text(
+                    '${S.of(context).Gregorian} ${TimeInfo.getMeccaGregorianDate()}',
+                    style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    '${S.of(context).Hijri} ${TimeInfo.getMeccaHijriDate()}',
+                    style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding: EdgeInsets.only(
+                  left: isArabic() ? 0 : 1,
+                  right: isArabic() ? 1 : 0,
+                ),
+                child: Text(
+                  S.of(context).detQ,
+                  style: const TextStyle(
                       fontFamily: 'ElMessir',
-                      fontSize: 18,
-                      color: Theme.of(context).colorScheme.primary),
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  '   $_currentTime',
-                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
-                ),
-              ],
-            ),
-            Wrap(
-              runAlignment: WrapAlignment.center,
-              children: [
-                Text(
-                  '${S.of(context).Gregorian} ${TimeInfo.getNowGregorianDate()}',
-                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  '${S.of(context).Hijri} ${TimeInfo.getNowHijriDate()}',
-                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  S.of(context).timeM,
-                  style:  TextStyle(fontFamily: 'ElMessir', fontSize: 18,color: Theme.of(context).colorScheme.secondary),
-                ),
-                Text(
-                  '   $_meccaTime',
-                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
-                ),
-              ],
-            ),
-            Wrap(
-              runAlignment: WrapAlignment.center,
-              children: [
-                Text(
-                  '${S.of(context).Gregorian} ${TimeInfo.getMeccaGregorianDate()}',
-                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  '${S.of(context).Hijri} ${TimeInfo.getMeccaHijriDate()}',
-                  style: const TextStyle(fontFamily: 'ElMessir', fontSize: 18),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Container(
-              padding: EdgeInsets.only(
-                left: isArabic() ? 0 : 1,
-                right: isArabic() ? 1 : 0,
               ),
-              child: Text(
-                S.of(context).detQ,
-                style: const TextStyle(
-                    fontFamily: 'ElMessir',
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
+              SizedBox(height:20),
+              Container(
+                
+          child: QiblahScreen(),
+          
               ),
-            ),
-            SizedBox(height:20),
-            Container(
-              
-child: QiblahScreen(),
-
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
