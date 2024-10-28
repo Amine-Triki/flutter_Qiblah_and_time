@@ -4,8 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 import 'package:intl/intl.dart';
 
-import 'screens/home scrren/compass.dart';
-import 'screens/home scrren/time.dart';
+import 'screens/home_scrren/compass.dart';
+import 'screens/home_scrren/time.dart';
 import 'dart:async';
 
 void main() {
