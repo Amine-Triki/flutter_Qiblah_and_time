@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungAr": MessageLookupByLibrary.simpleMessage("arabic"),
         "lungEn": MessageLookupByLibrary.simpleMessage("english"),
         "lungFr": MessageLookupByLibrary.simpleMessage("franche"),
+        "permision": MessageLookupByLibrary.simpleMessage(
+            "Location permission (GPS) must be granted to use the app."),
         "timeM": MessageLookupByLibrary.simpleMessage("Time in Mecca"),
         "timeNow": MessageLookupByLibrary.simpleMessage("Current Time"),
         "title": MessageLookupByLibrary.simpleMessage("Compass and Time")

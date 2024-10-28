@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungAr": MessageLookupByLibrary.simpleMessage("arabe"),
         "lungEn": MessageLookupByLibrary.simpleMessage("Anglais"),
         "lungFr": MessageLookupByLibrary.simpleMessage("français"),
+        "permision": MessageLookupByLibrary.simpleMessage(
+            "Une autorisation de localisation (GPS) doit être accordée pour utiliser l\'application."),
         "timeM": MessageLookupByLibrary.simpleMessage("L\'heure à la Mecque"),
         "timeNow": MessageLookupByLibrary.simpleMessage("Heure actuelle"),
         "title": MessageLookupByLibrary.simpleMessage("Boussole et heure")

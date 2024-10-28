@@ -189,6 +189,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Location permission (GPS) must be granted to use the app.`
+  String get permision {
+    return Intl.message(
+      'Location permission (GPS) must be granted to use the app.',
+      name: 'permision',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

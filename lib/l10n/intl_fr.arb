@@ -13,5 +13,7 @@
     "Gregorian": "Grégorien",
     "home": "Accueil",
     "conTime": "conversion de temps",
-    "gregorianHijri": "Grégorien <--> Hijri"
+    "gregorianHijri": "Grégorien <--> Hijri",
+    "permision": "Une autorisation de localisation (GPS) doit être accordée pour utiliser l'application."
+
 }

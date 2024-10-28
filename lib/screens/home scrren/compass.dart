@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../generated/l10n.dart';
+
 class QiblahScreen extends StatefulWidget {
   const QiblahScreen({super.key});
 
@@ -23,8 +25,7 @@ class _QiblahScreenState extends State<QiblahScreen> {
     if (status.isDenied) {
       // التعامل مع حالة الرفض
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("يجب منح إذن الموقع لاستخدام التطبيق"))
-      );
+          SnackBar(content: Text("يجب منح إذن الموقع لاستخدام التطبيق")));
     }
     if (status.isPermanentlyDenied) {
       // فتح إعدادات الجهاز لتمكين الأذونات
@@ -50,6 +51,8 @@ class _QiblahScreenState extends State<QiblahScreen> {
 }
 
 class QiblahCompass extends StatelessWidget {
+  const QiblahCompass({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QiblahDirection>(
@@ -58,7 +61,11 @@ class QiblahCompass extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return CircularProgressIndicator();
         } else if (snapshot.hasError) {
-          return Text("خطأ في البوصلة");
+          return Text(
+            S.of(context).permision,
+            maxLines: 3,
+            softWrap: true,
+          );
         } else {
           final qiblahDirection = snapshot.data!;
           return Transform.rotate(

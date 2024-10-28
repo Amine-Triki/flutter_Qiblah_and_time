@@ -47,6 +47,7 @@ class _MyAppState extends State<MyApp> {
           unselectedItemColor: Colors.grey,
         ),
       ),
+      debugShowCheckedModeBanner: false,
       home: HomeView(
         onLanguageChanged: (String newLang) {
           setState(() {
@@ -221,11 +222,7 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               SizedBox(height:20),
-              Container(
-                
-          child: QiblahScreen(),
-          
-              ),
+              QiblahScreen(),
             ],
           ),
         ),

@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungAr": MessageLookupByLibrary.simpleMessage("عربي"),
         "lungEn": MessageLookupByLibrary.simpleMessage("أنجليزي"),
         "lungFr": MessageLookupByLibrary.simpleMessage("فرنسي"),
+        "permision": MessageLookupByLibrary.simpleMessage(
+            "يجب منح إذن الموقع ( نظام تحديد الموقع ) لاستخدام التطبيق"),
         "timeM": MessageLookupByLibrary.simpleMessage("الوقت في مكة المكرمة"),
         "timeNow": MessageLookupByLibrary.simpleMessage("الوقت الآن"),
         "title": MessageLookupByLibrary.simpleMessage("البوصلة و الوقت")
