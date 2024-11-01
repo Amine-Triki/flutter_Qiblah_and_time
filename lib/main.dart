@@ -221,7 +221,7 @@ class _HomeViewState extends State<HomeView> {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height:20),
+              SizedBox(height:35),
               QiblahScreen(),
             ],
           ),

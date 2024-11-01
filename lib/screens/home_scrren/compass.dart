@@ -68,12 +68,32 @@ class QiblahCompass extends StatelessWidget {
           );
         } else {
           final qiblahDirection = snapshot.data!;
-          return Transform.rotate(
-            angle: qiblahDirection.qiblah * (3.14159 / 180),
-            child: Icon(
-              Icons.navigation,
-              size: 100,
-              color: Colors.blue,
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // الخط الأخضر الدال على اتجاه القبلة
+                  Positioned(
+                    top: 0, // تعديل المسافة لزيادة وضوح الخط
+                    child: Container(
+                      width: 2,
+                      height: 10, // طول الخط
+                      color: Colors.green,
+                    ),
+                  ),
+                  // السهم الذي يشير لاتجاه القبلة
+                  Transform.rotate(
+                    angle: qiblahDirection.qiblah * (3.14159 / 180),
+                    child: Icon(
+                      Icons.navigation,
+                      size: 100,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         }
